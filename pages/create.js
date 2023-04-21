@@ -27,7 +27,7 @@ export default function CreatePlacePage() {
 
     if (response.ok) {
       await response.json();
-      router.push("/");
+      await router.push("/");
     } else {
       console.error(response.status);
     }
