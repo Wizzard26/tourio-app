@@ -17,8 +17,6 @@ export default function CreatePlacePage() {
     const formData = new FormData(event.target);
     const placeData = Object.fromEntries(formData);
 
-
-
     const response = await fetch("/api/places", {
       method: "POST",
       headers: {
@@ -29,6 +27,7 @@ export default function CreatePlacePage() {
 
     if (response.ok) {
       await response.json();
+      router.push("/");
     } else {
       console.error(response.status);
     }
